@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Athithya Foundation — Redefining Education. Strengthening Society. A nonprofit transforming government schools and communities across Karnataka."/>
+<meta property="og:title" content="Athithya Foundation"/>
+<meta property="og:description" content="Redefining Education. Strengthening Society."/>
+<meta property="og:image" content="https://athithyafoundation.org/og-preview.jpg"/>
+<title>Athithya Foundation — Vidya Vinayena Shobhite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+
+/* ─────────────────────────────────────────
+   TOKENS
+───────────────────────────────────────── */
+:root {
+  --or:   #E8610A;   /* main orange      */
+  --orv:  #FF7B20;   /* vivid orange     */
+  --ors:  #FFA04D;   /* soft orange      */
+  --orp:  #FFF0E6;   /* pale orange bg   */
+  --deep: #1A0A00;   /* near-black brown */
+  --ink:  #2C1400;
+  --txt:  #3D2000;
+  --mut:  #7A5C40;
+  --bdr:  #F0D5C0;
+  --crm:  #FFFAF5;   /* cream bg         */
+
+  /* accent palette for program cards */
+  --teal: #0A7B6E;
+  --blue: #1A5FAB;
+  --pur:  #6B3FA0;
+  --grn:  #2D7A2D;
+  --red:  #C0392B;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--crm);color:var(--txt);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* scrollbar */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--ors);border-radius:99px}
+
+/* ─────────────────────────────────────────
+   REUSABLE HELPERS
+───────────────────────────────────────── */
+.wrap{max-width:1180px;margin:0 auto;padding:0 5%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.72rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.14em;color:var(--or);margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:26px;height:2.5px;background:var(--or);border-radius:2px;display:inline-block}
+.eyebrow::after{content:'';width:10px;height:2.5px;background:var(--ors);border-radius:2px;display:inline-block}
+.sec-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.85rem,3.5vw,2.85rem);
+  font-weight:900;line-height:1.18;color:var(--ink);margin-bottom:14px;
+}
+.sec-title span{color:var(--or)}
+.sec-sub{color:var(--mut);font-size:.97rem;line-height:1.78;max-width:540px}
+.btn-main{
+  display:inline-block;background:var(--or);color:#fff;
+  padding:13px 28px;border-radius:11px;font-weight:700;font-size:.9rem;
+  transition:all .22s;box-shadow:0 5px 20px rgba(232,97,10,.38);
+}
+.btn-main:hover{background:var(--orv);transform:translateY(-2px);box-shadow:0 10px 28px rgba(232,97,10,.48)}
+.btn-ghost{
+  display:inline-block;border:1.5px solid rgba(255,255,255,.32);color:#fff;
+  padding:13px 28px;border-radius:11px;font-weight:600;font-size:.9rem;
+  transition:all .2s;
+}
+.btn-ghost:hover{border-color:var(--ors);background:rgba(232,97,10,.12)}
+
+/* ─────────────────────────────────────────
+   NAVBAR
+───────────────────────────────────────── */
+#topnav{
+  position:fixed;top:0;left:0;width:100%;z-index:900;
+  height:74px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;
+  background:rgba(255,250,245,.96);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--bdr);
+  box-shadow:0 2px 18px rgba(232,97,10,.07);
+  transition:background .3s;
+}
+.nav-logo{display:flex;align-items:center;gap:11px}
+/* ► PUT YOUR REAL LOGO IMAGE HERE:
+   Replace the SVG block below with:
+   <img src="your-logo.png" alt="Athithya Foundation" style="height:46px;width:auto"> */
+.logo-wrap{
+  width:46px;height:46px;border-radius:10px;
+  background:var(--orp);border:2px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+}
+.logo-svg-nav{width:36px;height:36px}
+.brand-name{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:900;color:var(--or);line-height:1.15}
+.brand-sub{font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;color:var(--mut);font-weight:700;margin-top:1px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.86rem;font-weight:600;color:var(--txt);transition:color .2s;position:relative;padding-bottom:2px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--or);transition:width .25s}
+.nav-links a:hover{color:var(--or)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:14px}
+/* Social icons in nav */
+.nav-socials{display:flex;gap:8px}
+.nav-soc{
+  width:34px;height:34px;border-radius:8px;
+  background:var(--orp);border:1px solid var(--bdr);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.nav-soc:hover{background:var(--or);border-color:var(--or)}
+.nav-soc:hover svg path{fill:#fff}
+.nav-soc svg{width:16px;height:16px}
+.nav-cta{
+  background:var(--or);color:#fff;border:none;
+  padding:10px 22px;border-radius:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:800;
+  cursor:pointer;transition:all .2s;
+  box-shadow:0 4px 16px rgba(232,97,10,.32);
+}
+.nav-cta:hover{background:var(--orv);transform:translateY(-1px)}
+/* hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;border:none;background:none;padding:4px}
+.hamburger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:all .3s;display:block}
+/* mobile drawer */
+.mob-menu{
+  display:none;position:fixed;top:74px;left:0;right:0;
+  background:var(--crm);border-top:1px solid var(--bdr);
+  padding:18px 5%;z-index:899;
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+}
+.mob-menu.open{display:flex;flex-direction:column;gap:4px}
+.mob-menu a{padding:11px 0;font-weight:600;font-size:.9rem;color:var(--txt);border-bottom:1px solid var(--bdr)}
+.mob-menu a:last-of-type{border-bottom:none}
+.mob-social-row{display:flex;gap:10px;padding-top:14px;margin-top:4px}
+.mob-soc-btn{
+  flex:1;padding:11px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  font-size:.8rem;font-weight:700;border:1.5px solid var(--bdr);
+  color:var(--txt);transition:all .2s;
+}
+.mob-soc-btn:hover{border-color:var(--or);color:var(--or)}
+.mob-menu .btn-main{width:100%;text-align:center;margin-top:10px}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(140deg,#150700 0%,#3D1800 45%,#6B2800 75%,#1A0A00 100%);
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:60px;
+  padding:100px 5% 80px;position:relative;overflow:hidden;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,123,32,.035) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,123,32,.035) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.hero-glow1{position:absolute;top:-180px;right:-180px;width:640px;height:640px;background:radial-gradient(circle,rgba(232,97,10,.18) 0%,transparent 68%);border-radius:50%;pointer-events:none}
+.hero-glow2{position:absolute;bottom:-180px;left:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(255,123,32,.1) 0%,transparent 68%);border-radius:50%;pointer-events:none}
+.hero-left{position:relative;z-index:2}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:9px;
+  background:rgba(232,97,10,.2);border:1px solid rgba(232,97,10,.38);
+  padding:7px 16px;border-radius:100px;
+  color:var(--ors);font-size:.72rem;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;margin-bottom:22px;
+}
+.hero-dot{width:6px;height:6px;background:var(--orv);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.3rem,4.5vw,4rem);
+  font-weight:900;line-height:1.1;color:#fff;margin-bottom:14px;
+}
+.hero-h1 em{color:var(--orv);font-style:italic;display:block}
+.hero-sanskrit{
+  font-size:.85rem;color:rgba(255,160,77,.72);font-style:italic;
+  font-weight:500;border-left:3px solid var(--or);padding-left:14px;
+  margin-bottom:22px;line-height:1.6;
+}
+.hero-desc{color:rgba(255,255,255,.65);font-size:1rem;line-height:1.82;max-width:480px;margin-bottom:38px}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:36px}
+/* Social proof row */
+.hero-socials{display:flex;align-items:center;gap:10px}
+.hero-socials-label{color:rgba(255,255,255,.38);font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.hero-soc-icons{display:flex;gap:8px}
+.h-soc{
+  width:36px;height:36px;border-radius:9px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.h-soc:hover{background:var(--or);border-color:var(--or);transform:translateY(-2px)}
+.h-soc svg{width:16px;height:16px}
+/* Hero Right */
+.hero-right{position:relative;z-index:2;display:flex;justify-content:center;align-items:center}
+.hero-card{
+  position:relative;width:400px;height:480px;
+}
+.hero-logo-box{
+  position:absolute;top:24px;left:50%;transform:translateX(-50%);
+  width:252px;height:252px;border-radius:22px;
+  background:rgba(255,255,255,.05);border:1.5px solid rgba(232,97,10,.28);
+  backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:28px;
+  box-shadow:0 18px 52px rgba(0,0,0,.3);
+}
+.hero-logo-big{width:108px;height:108px}
+.hero-logo-txt{color:#fff;font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;text-align:center;line-height:1.25}
+.hero-logo-tag{color:var(--ors);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;text-align:center}
+/* stat chips */
+.stat-chip{
+  position:absolute;background:rgba(255,255,255,.97);
+  border-radius:13px;padding:13px 17px;
+  box-shadow:0 12px 40px rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.5);
+}
+.stat-chip .sn{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--or);line-height:1}
+.stat-chip .sl{font-size:.66rem;color:var(--mut);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.sc1{bottom:24px;left:-14px}
+.sc2{top:14px;right:-18px}
+.sc3{bottom:110px;right:-24px}
+
+/* ─────────────────────────────────────────
+   IMPACT STRIP
+───────────────────────────────────────── */
+.strip{
+  background:var(--or);padding:22px 5%;
+  display:flex;
+}
+.strip-item{
+  flex:1;text-align:center;padding:6px 14px;
+  border-right:1px solid rgba(255,255,255,.28);
+}
+.strip-item:last-child{border-right:none}
+.strip-n{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:#fff;line-height:1}
+.strip-l{font-size:.7rem;color:rgba(255,255,255,.84);margin-top:3px;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+
+/* ─────────────────────────────────────────
+   ABOUT
+───────────────────────────────────────── */
+.about{background:#fff;padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:54px}
+/* mosaic */
+.mosaic{position:relative;height:460px}
+.mos-main{
+  position:absolute;top:0;left:0;
+  width:270px;height:350px;border-radius:20px;
+  background:linear-gradient(145deg,var(--or),#A03000);
+  display:flex;align-items:center;justify-content:center;
+  font-size:72px;overflow:hidden;
+  box-shadow:0 16px 48px rgba(232,97,10,.3);
+}
+.mos-main-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 55%)}
+.mos-main-cap{position:absolute;bottom:18px;left:18px;right:18px;z-index:1;color:#fff}
+.mos-main-cap p{font-weight:700;font-size:.88rem}
+.mos-main-cap span{font-size:.72rem;opacity:.7;font-weight:400}
+.mos-sec{
+  position:absolute;bottom:0;right:0;
+  width:196px;height:230px;border-radius:16px;
+  background:linear-gradient(145deg,var(--teal),#033A36);
+  display:flex;align-items:center;justify-content:center;
+  font-size:52px;box-shadow:0 10px 32px rgba(10,123,110,.3);
+}
+.mos-badge{
+  position:absolute;top:24px;right:-14px;
+  background:var(--orp);border:2px solid var(--or);
+  padding:12px 16px;border-radius:13px;
+  box-shadow:0 6px 22px rgba(232,97,10,.2);text-align:center;
+}
+.mos-badge-n{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--or);line-height:1}
+.mos-badge-l{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-top:3px}
+/* about right */
+.about-right .sec-sub{max-width:100%;margin-bottom:28px}
+.vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+.vm{padding:18px;border-radius:13px;border:1.5px solid var(--bdr);background:var(--crm);transition:all .22s}
+.vm:hover{border-color:var(--or);transform:translateY(-2px);box-shadow:0 4px 16px rgba(232,97,10,.1)}
+.vm-ico{font-size:1.5rem;margin-bottom:8px}
+.vm h4{font-weight:800;font-size:.87rem;color:var(--ink);margin-bottom:5px}
+.vm p{font-size:.78rem;color:var(--mut);line-height:1.58}
+.about-quote{
+  background:var(--orp);border-left:4px solid var(--or);
+  padding:18px 22px;border-radius:0 12px 12px 0;
+  font-style:italic;color:var(--or);font-size:.93rem;font-weight:700;line-height:1.6;
+}
+
+/* ─────────────────────────────────────────
+   PROGRAMS
+───────────────────────────────────────── */
+.programs{background:var(--crm);padding:100px 0}
+.prog-head{text-align:center;margin-bottom:54px}
+.prog-head .sec-sub{margin:0 auto}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{
+  background:#fff;border-radius:20px;border:1px solid var(--bdr);
+  overflow:hidden;transition:all .28s;display:flex;flex-direction:column;
+}
+.pcard:hover{transform:translateY(-7px);box-shadow:0 20px 52px rgba(0,0,0,.1);border-color:transparent}
+.pcard-img{
+  height:175px;display:flex;align-items:center;justify-content:center;
+  font-size:3rem;position:relative;overflow:hidden;
+}
+.ci-or{background:linear-gradient(135deg,#E8610A,#A03000)}
+.ci-te{background:linear-gradient(135deg,#0A7B6E,#033A36)}
+.ci-bl{background:linear-gradient(135deg,#1A5FAB,#0A2855)}
+.ci-pu{background:linear-gradient(135deg,#6B3FA0,#2A1040)}
+.ci-gn{background:linear-gradient(135deg,#2D7A2D,#0A3A0A)}
+.ci-rd{background:linear-gradient(135deg,#C0392B,#5A0A00)}
+.pcard-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.22),transparent)}
+.pcard-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.ptag{
+  display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.1em;padding:3px 10px;border-radius:100px;margin-bottom:8px;
+}
+.t-or{background:var(--orp);color:var(--or)}
+.t-te{background:#E0F5F3;color:var(--teal)}
+.t-bl{background:#E6F0FF;color:var(--blue)}
+.t-pu{background:#F0E8FF;color:var(--pur)}
+.t-gn{background:#E8F5E8;color:var(--grn)}
+.t-rd{background:#FFE8E6;color:var(--red)}
+.pcard h3{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;color:var(--ink);margin-bottom:7px;line-height:1.32}
+.pcard p{font-size:.81rem;color:var(--mut);line-height:1.68;flex:1;margin-bottom:14px}
+.pcard-arrow{display:inline-flex;align-items:center;gap:6px;font-size:.81rem;font-weight:800;transition:gap .2s}
+.pcard-arrow:hover{gap:12px}
+
+/* ─────────────────────────────────────────
+   GALLERY
+───────────────────────────────────────── */
+.gallery{background:var(--deep);padding:90px 0}
+.gal-head{text-align:center;margin-bottom:46px}
+.gal-head .eyebrow{color:var(--ors)}
+.gal-head .eyebrow::before{background:var(--ors)}
+.gal-head .eyebrow::after{background:rgba(255,160,77,.35)}
+.gal-head .sec-title{color:#fff}
+.gal-head .sec-sub{color:rgba(255,255,255,.47);margin:0 auto}
+/* Masonry layout */
+.gal-grid{
+  display:grid;
+  grid-template-columns:1.9fr 1fr 1fr;
+  grid-template-rows:210px 210px;
+  gap:10px;border-radius:18px;overflow:hidden;
+}
+.gi{
+  border-radius:12px;overflow:hidden;position:relative;
+  display:flex;align-items:flex-end;
+  cursor:pointer;transition:transform .3s;
+}
+.gi:hover{transform:scale(.975)}
+.gi:hover .gi-ov{opacity:1}
+.gi:hover .gi-cap{transform:translateY(0)}
+.gi.tall{grid-row:1/span 2;border-radius:16px}
+.gi-bg{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;font-size:3.5rem;
+}
+.g1 .gi-bg{background:linear-gradient(145deg,#E8610A,#7A2800)}
+.g2 .gi-bg{background:linear-gradient(145deg,#0A7B6E,#033636)}
+.g3 .gi-bg{background:linear-gradient(145deg,#1A5FAB,#082840)}
+.g4 .gi-bg{background:linear-gradient(145deg,#6B3FA0,#280F40)}
+.g5 .gi-bg{background:linear-gradient(145deg,#C0392B,#580A00)}
+.gi-ov{
+  position:absolute;inset:0;background:rgba(0,0,0,.42);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .28s;
+}
+.gi-ov span{
+  background:var(--or);color:#fff;
+  font-size:.8rem;font-weight:800;
+  padding:8px 18px;border-radius:100px;
+}
+.gi-cap{
+  position:relative;z-index:2;
+  width:100%;padding:14px;
+  background:linear-gradient(to top,rgba(0,0,0,.72),transparent);
+  transform:translateY(6px);transition:transform .28s;
+}
+.gi-cap p{color:#fff;font-size:.78rem;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.gi-cap span{color:rgba(255,255,255,.58);font-size:.68rem}
+/* lightbox */
+.lbox{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.93);align-items:center;justify-content:center;
+  padding:24px;
+}
+.lbox.show{display:flex}
+.lbox-inner{position:relative;max-width:800px;width:100%;text-align:center}
+.lbox-img{
+  width:100%;max-height:72vh;object-fit:contain;border-radius:14px;
+  background:rgba(255,255,255,.05);padding:40px;font-size:6rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.lbox-cap{color:rgba(255,255,255,.7);font-size:.88rem;margin-top:14px;font-weight:600}
+.lbox-close{
+  position:absolute;top:-16px;right:-16px;
+  width:38px;height:38px;border-radius:50%;
+  background:var(--or);color:#fff;border:none;cursor:pointer;
+  font-size:1.2rem;display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.lbox-close:hover{background:var(--orv)}
+.gal-cta{text-align:center;margin-top:36px}
+.btn-or-out{
+  border:2px solid var(--or);color:var(--or);
+  padding:12px 28px;border-radius:10px;font-weight:700;font-size:.88rem;
+  transition:all .2s;display:inline-block;
+}
+.btn-or-out:hover{background:var(--or);color:#fff}
+
+/* ─────────────────────────────────────────
+   CSR SECTION
+───────────────────────────────────────── */
+.csr{background:#fff;padding:100px 0}
+.csr-grid{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:start;margin-top:52px}
+.csr-benefits{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.csrb{
+  display:flex;gap:13px;align-items:flex-start;
+  padding:16px 18px;border-radius:13px;
+  border:1.5px solid var(--bdr);background:var(--crm);transition:all .22s;
+}
+.csrb:hover{border-color:var(--or);transform:translateX(4px);box-shadow:0 3px 14px rgba(232,97,10,.1)}
+.csrb-ic{
+  width:42px;height:42px;border-radius:10px;flex-shrink:0;
+  background:var(--or);display:flex;align-items:center;justify-content:center;
+  font-size:1.05rem;box-shadow:0 4px 12px rgba(232,97,10,.28);
+}
+.csrb h4{font-weight:800;font-size:.88rem;color:var(--ink);margin-bottom:3px}
+.csrb p{font-size:.78rem;color:var(--mut);line-height:1.56}
+/* CSR form */
+.csr-form{
+  background:linear-gradient(150deg,#1A0A00,#3D1800);
+  border-radius:22px;padding:40px;
+  border:1px solid rgba(232,97,10,.2);
+  box-shadow:0 20px 56px rgba(0,0,0,.25);
+}
+.csr-form h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:5px}
+.csr-form > p{color:rgba(255,255,255,.45);font-size:.81rem;margin-bottom:24px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.48);margin-bottom:6px}
+.fg input,.fg select,.fg textarea{
+  width:100%;padding:11px 15px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  border-radius:9px;color:#fff;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.87rem;
+  outline:none;transition:border .2s;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.28)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--or)}
+.fg select option{background:#2C1400}
+.fg textarea{resize:vertical;min-height:84px}
+.fgrow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.btn-csr-sub{
+  width:100%;background:var(--or);color:#fff;border:none;
+  padding:13px;border-radius:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.93rem;font-weight:800;
+  cursor:pointer;transition:all .2s;margin-top:6px;
+  box-shadow:0 6px 20px rgba(232,97,10,.38);
+}
+.btn-csr-sub:hover{background:var(--orv);transform:translateY(-2px)}
+
+/* ─────────────────────────────────────────
+   TESTIMONIALS
+───────────────────────────────────────── */
+.testi{background:var(--crm);padding:100px 0}
+.testi-head{text-align:center;margin-bottom:50px}
+.testi-head .sec-sub{margin:0 auto}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tc{
+  background:#fff;padding:28px;border-radius:18px;
+  border:1.5px solid var(--bdr);position:relative;transition:all .24s;
+}
+.tc:hover{border-color:var(--ors);transform:translateY(-4px);box-shadow:0 10px 36px rgba(232,97,10,.1)}
+.tc-qt{position:absolute;top:18px;right:22px;font-size:2.8rem;line-height:1;color:var(--orp);font-family:'Playfair Display',serif;font-weight:900;user-select:none}
+.tc-type{display:inline-block;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--or);background:var(--orp);padding:3px 10px;border-radius:100px;margin-bottom:13px}
+.tc p{font-size:.84rem;line-height:1.72;color:var(--txt);font-style:italic;margin-bottom:20px}
+.tc-auth{display:flex;align-items:center;gap:11px}
+.tc-av{width:40px;height:40px;border-radius:50%;background:var(--or);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Playfair Display',serif;font-weight:900;font-size:.95rem;flex-shrink:0}
+.tc-av.tl{background:var(--teal)}
+.tc-av.bl{background:var(--blue)}
+.tc-name{font-weight:800;font-size:.84rem;color:var(--ink)}
+.tc-role{font-size:.71rem;color:var(--mut)}
+
+/* ─────────────────────────────────────────
+   CONTACT
+───────────────────────────────────────── */
+.contact{background:#fff;padding:100px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:76px;margin-top:52px;align-items:start}
+.contact-info .sec-sub{max-width:100%;margin-bottom:36px}
+.cmeths{display:flex;flex-direction:column;gap:18px}
+.cm{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:18px;border-radius:13px;
+  border:1.5px solid var(--bdr);background:var(--crm);transition:all .2s;
+}
+.cm:hover{border-color:var(--or);box-shadow:0 3px 14px rgba(232,97,10,.1)}
+.cm-ic{width:46px;height:46px;border-radius:11px;flex-shrink:0;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 4px 14px rgba(232,97,10,.28)}
+.cm-txt label{display:block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin-bottom:3px}
+.cm-txt a,.cm-txt p{color:var(--ink);font-weight:700;font-size:.88rem;line-height:1.5}
+/* Social links in contact */
+.contact-socials{margin-top:28px}
+.contact-socials h4{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin-bottom:12px}
+.soc-row{display:flex;gap:10px;flex-wrap:wrap}
+.soc-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:10px;
+  border:1.5px solid var(--bdr);background:var(--crm);
+  font-size:.8rem;font-weight:700;color:var(--txt);
+  transition:all .2s;
+}
+.soc-btn:hover{border-color:var(--or);color:var(--or);background:var(--orp)}
+.soc-btn svg{width:16px;height:16px;flex-shrink:0}
+/* contact form */
+.cf-wrap{background:var(--crm);border:1.5px solid var(--bdr);border-radius:22px;padding:40px}
+.cf-wrap h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--ink);margin-bottom:5px}
+.cf-wrap > p{color:var(--mut);font-size:.82rem;margin-bottom:24px}
+.lf{margin-bottom:13px}
+.lf label{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin-bottom:6px}
+.lf input,.lf select,.lf textarea{
+  width:100%;padding:11px 15px;
+  background:#fff;border:1.5px solid var(--bdr);border-radius:9px;
+  color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;font-size:.87rem;
+  outline:none;transition:border .2s;
+}
+.lf input:focus,.lf select:focus,.lf textarea:focus{border-color:var(--or)}
+.lf textarea{resize:vertical;min-height:92px}
+.btn-cf{
+  width:100%;background:var(--or);color:#fff;border:none;
+  padding:13px;border-radius:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.93rem;font-weight:800;
+  cursor:pointer;transition:all .2s;margin-top:6px;
+  box-shadow:0 6px 20px rgba(232,97,10,.32);
+}
+.btn-cf:hover{background:var(--orv);transform:translateY(-2px)}
+
+/* ─────────────────────────────────────────
+   FOOTER
+───────────────────────────────────────── */
+footer{background:var(--deep);padding:60px 5% 26px}
+.footer-top{display:grid;grid-template-columns:1.7fr 1fr 1fr 1fr;gap:44px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.08)}
+.fb-logo{display:flex;align-items:center;gap:11px;margin-bottom:16px}
+.fbl-ic{width:42px;height:42px;border-radius:10px;background:var(--or);display:flex;align-items:center;justify-content:center;font-size:20px}
+.fbl-name{font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:#fff}
+.fbl-tag{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ors);margin-top:1px}
+.fb-desc{color:rgba(255,255,255,.36);font-size:.8rem;line-height:1.72;margin-bottom:16px}
+.fb-sanskrit{color:var(--ors);font-style:italic;font-size:.8rem;font-weight:600;margin-bottom:20px}
+/* Footer social icons */
+.footer-socials{display:flex;gap:8px}
+.f-soc{
+  width:35px;height:35px;border-radius:8px;
+  background:rgba(255,255,255,.07);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;border:1px solid rgba(255,255,255,.08);
+}
+.f-soc:hover{background:var(--or);border-color:var(--or);transform:translateY(-2px)}
+.f-soc svg{width:15px;height:15px}
+.fc h4{color:#fff;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:16px}
+.fc ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fc ul li a{color:rgba(255,255,255,.36);font-size:.79rem;transition:color .2s}
+.fc ul li a:hover{color:var(--ors)}
+.fc-addr{color:rgba(255,255,255,.36);font-size:.79rem;line-height:1.72}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:22px;flex-wrap:wrap;gap:10px}
+.footer-bottom p{color:rgba(255,255,255,.22);font-size:.73rem}
+.footer-btm-links{display:flex;gap:18px}
+.footer-btm-links a{color:rgba(255,255,255,.22);font-size:.73rem;transition:color .2s}
+.footer-btm-links a:hover{color:var(--ors)}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:110px}
+  .hero-right{display:none}
+  .hero-desc,.hero-btns,.hero-socials{justify-content:center;margin-left:auto;margin-right:auto}
+  .hero-btns{justify-content:center}
+  .about-grid{grid-template-columns:1fr}
+  .mosaic{height:300px}
+  .mos-main{width:220px;height:280px}
+  .mos-sec{width:165px;height:195px}
+  .prog-grid{grid-template-columns:1fr 1fr}
+  .csr-grid{grid-template-columns:1fr}
+  .testi-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .nav-socials{display:none}
+}
+@media(max-width:700px){
+  .hero-h1{font-size:2.1rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .nav-cta{display:none}
+  .strip{flex-wrap:wrap}
+  .strip-item{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.18);padding:10px 0}
+  .strip-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.18)}
+  .prog-grid{grid-template-columns:1fr}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gi.tall{grid-row:auto}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .vm-grid{grid-template-columns:1fr}
+  .fgrow{grid-template-columns:1fr}
+  .soc-row{flex-direction:column}
+}
+
+/* ── animations ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.au{animation:fadeUp .62s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+  NAVBAR
+═══════════════════════════════════════════ -->
+<header id="topnav">
+  <!-- LOGO -->
+  <a href="#" class="nav-logo">
+    <div class="logo-wrap">
+      <!--
+        ════════════════════════════════════════
+        HOW TO ADD YOUR REAL LOGO:
+        1. Save your logo PNG as "logo.png"
+        2. Put it in the same folder as this HTML file
+        3. Replace the <svg ...> below with:
+           <img src="logo.png" alt="Athithya Foundation" style="width:36px;height:36px;object-fit:contain">
+        ════════════════════════════════════════
+      -->
+      <img src="Athithya_Foundation_Logo_withoutBG.png" alt="Athithya Foundation Logo" style="height: 150px; width:auto; object-fit:contain;">
+        <rect x="8" y="47" width="64" height="7" rx="3" fill="#E8610A"/>
+        <path d="M8 47 Q8 57 20 58 L38 60 L38 48 Q22 44 8 47Z" fill="#FF9540"/>
+        <path d="M72 47 Q72 57 60 58 L42 60 L42 48 Q58 44 72 47Z" fill="#FF9540"/>
+        <rect x="37" y="44" width="6" height="18" rx="3" fill="#C05000"/>
+        <circle cx="40" cy="21" r="6.5" fill="#E8610A"/>
+        <path d="M40 27.5 Q24 32 16 25" stroke="#E8610A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M40 27.5 Q56 32 64 25" stroke="#E8610A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <ellipse cx="14" cy="21" rx="5" ry="7" fill="#FF7B20" transform="rotate(-22,14,21)"/>
+        <ellipse cx="23" cy="14" rx="4" ry="6" fill="#FF9540" transform="rotate(-10,23,14)"/>
+        <ellipse cx="32" cy="11" rx="4.5" ry="6" fill="#E8610A" transform="rotate(4,32,11)"/>
+        <ellipse cx="48" cy="11" rx="4.5" ry="6" fill="#E8610A" transform="rotate(-4,48,11)"/>
+        <ellipse cx="57" cy="14" rx="4" ry="6" fill="#FF9540" transform="rotate(10,57,14)"/>
+        <ellipse cx="66" cy="21" rx="5" ry="7" fill="#FF7B20" transform="rotate(22,66,21)"/>
+        <rect x="38" y="27.5" width="4" height="17" rx="2" fill="#E8610A"/>
+      </svg>
+    </div>
+    <div>
+      <div class="brand-name">Athithya Foundation</div>
+      <div class="brand-sub">Vidya Vinayena Shobhite</div>
+    </div>
+  </a>
+
+  <!-- DESKTOP NAV LINKS -->
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#csr">CSR</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!-- RIGHT SIDE -->
+  <div class="nav-right">
+    <!-- ══ SOCIAL ICONS IN NAVBAR ══
+         Change the href="#" to your actual URLs:
+         Instagram → href="https://instagram.com/athithyafoundation"
+         LinkedIn  → href="https://linkedin.com/company/athithya-foundation"
+         Facebook  → href="https://facebook.com/athithyafoundation"
+    -->
+    <div class="nav-socials">
+      <a href="#" class="nav-soc" title="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#E8610A" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#E8610A" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E8610A"/></svg>
+      </a>
+      <a href="#" class="nav-soc" title="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#E8610A" stroke-width="2"/><path d="M7 10v7M7 7v.5" stroke="#E8610A" stroke-width="2" stroke-linecap="round"/><path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4" stroke="#E8610A" stroke-width="2" stroke-linecap="round"/><path d="M11 10v7" stroke="#E8610A" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a href="#" class="nav-soc" title="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#E8610A" stroke-width="2"/><path d="M13 21v-8h2.5l.5-3H13V8.5c0-.83.67-1.5 1.5-1.5H16V4h-2a4 4 0 0 0-4 4v2H8v3h2v8" stroke="#E8610A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <button class="nav-cta" onclick="document.getElementById('csr').scrollIntoView({behavior:'smooth'})">Partner With Us</button>
+    <!-- HAMBURGER for mobile -->
+    <button class="hamburger" id="ham" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobmenu">
+  <a href="#about"    onclick="closeMenu()">About</a>
+  <a href="#programs" onclick="closeMenu()">Programs</a>
+  <a href="#gallery"  onclick="closeMenu()">Gallery</a>
+  <a href="#csr"      onclick="closeMenu()">CSR Partnerships</a>
+  <a href="#contact"  onclick="closeMenu()">Contact</a>
+  <div class="mob-social-row">
+    <a href="#" class="mob-soc-btn" target="_blank">📸 Instagram</a>
+    <a href="#" class="mob-soc-btn" target="_blank">💼 LinkedIn</a>
+    <a href="#" class="mob-soc-btn" target="_blank">👥 Facebook</a>
+  </div>
+  <a href="#csr" class="btn-main" onclick="closeMenu()">Partner With Us →</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  HERO
+═══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-left au">
+    <div class="hero-pill"><span class="hero-dot"></span> Education · Social Impact · Bangalore</div>
+    <h1 class="hero-h1">
+      Redefining Education.
+      <em>Strengthening Society.</em>
+    </h1>
+    <p class="hero-sanskrit">✦ "Vidya Vinayena Shobhite" — Knowledge Shines Through Humility</p>
+    <p class="hero-desc">A purpose-driven nonprofit transforming education ecosystems and delivering impactful social services that uplift communities across Karnataka.</p>
+    <div class="hero-btns">
+      <a href="#programs" class="btn-main">Explore Programs</a>
+      <a href="#csr" class="btn-ghost">CSR Partnerships →</a>
+    </div>
+
+    <!-- HERO SOCIAL LINKS
+         Change href="#" to your actual social media URLs -->
+    <div class="hero-socials">
+      <span class="hero-socials-label">Follow us</span>
+      <div class="hero-soc-icons">
+        <a href="#" class="h-soc" title="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.6)"/></svg>
+        </a>
+        <a href="#" class="h-soc" title="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><path d="M7 10v7M7 7v.5" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/><path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" class="h-soc" title="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><path d="M13 21v-8h2.5l.5-3H13V8.5c0-.83.67-1.5 1.5-1.5H16V4h-2a4 4 0 0 0-4 4v2H8v3h2v8" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="h-soc" title="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="5" stroke="rgba(255,255,255,0.6)" stroke-width="2"/><path d="M10 8.5l5 3.5-5 3.5V8.5Z" fill="rgba(255,255,255,0.6)"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Right -->
+  <div class="hero-right au d2">
+    <div class="hero-card">
+      <div class="hero-logo-box">
+<img src="Athithya_Foundation_Logo_withoutBG.png" alt="Athithya Foundation" style="height:46px; width:auto; object-fit:contain;">          <rect x="8" y="47" width="64" height="7" rx="3" fill="#E8610A"/>
+          <path d="M8 47 Q8 57 20 58 L38 60 L38 48 Q22 44 8 47Z" fill="#FF9540"/>
+          <path d="M72 47 Q72 57 60 58 L42 60 L42 48 Q58 44 72 47Z" fill="#FF9540"/>
+          <rect x="37" y="44" width="6" height="18" rx="3" fill="#C05000"/>
+          <circle cx="40" cy="21" r="6.5" fill="#E8610A"/>
+          <path d="M40 27.5 Q24 32 16 25" stroke="#E8610A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M40 27.5 Q56 32 64 25" stroke="#E8610A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <ellipse cx="14" cy="21" rx="5" ry="7" fill="#FF7B20" transform="rotate(-22,14,21)"/>
+          <ellipse cx="23" cy="14" rx="4" ry="6" fill="#FF9540" transform="rotate(-10,23,14)"/>
+          <ellipse cx="32" cy="11" rx="4.5" ry="6" fill="#E8610A"/>
+          <ellipse cx="48" cy="11" rx="4.5" ry="6" fill="#E8610A"/>
+          <ellipse cx="57" cy="14" rx="4" ry="6" fill="#FF9540" transform="rotate(10,57,14)"/>
+          <ellipse cx="66" cy="21" rx="5" ry="7" fill="#FF7B20" transform="rotate(22,66,21)"/>
+          <rect x="38" y="27.5" width="4" height="17" rx="2" fill="#E8610A"/>
+        </svg>
+        <div class="hero-logo-txt">Athithya Foundation</div>
+
+        <div class="hero-logo-tag">Malleshwaram, Bengaluru-560003</div>
+      </div>
+      <div class="stat-chip sc1"><div class="sn">10+</div><div class="sl">Students Reached</div></div>
+      <div class="stat-chip sc2"><div class="sn">5+</div><div class="sl">Schools Adopted</div></div>
+      <div class="stat-chip sc3"><div class="sn">5+</div><div class="sl">CSR Partners</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STRIP -->
+<div class="strip">
+  <div class="strip-item"><div class="strip-n">10,000+</div><div class="strip-l">Students Impacted</div></div>
+  <div class="strip-item"><div class="strip-n">50+</div><div class="strip-l">Schools Adopted</div></div>
+  <div class="strip-item"><div class="strip-n">100+</div><div class="strip-l">Volunteers</div></div>
+  <div class="strip-item"><div class="strip-n">15+</div><div class="strip-l">CSR Partners</div></div>
+  <div class="strip-item"><div class="strip-n">12+</div><div class="strip-l">Districts Covered</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  ABOUT
+═══════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="eyebrow">Who We Are</div>
+    <h2 class="sec-title">Built on a Mission to<br/><span>Transform Education</span></h2>
+    <p class="sec-sub">Athithya Foundation is committed to transforming education and strengthening social services to build an empowered and equitable society.</p>
+    <div class="about-grid">
+      <div class="mosaic">
+        <div class="mos-main">
+          <span style="position:relative;z-index:1">📚</span>
+          <div class="mos-main-grad"></div>
+          <div class="mos-main-cap"><p>Government School Transformation</p><span>Malleshwaram, Bengaluru</span></div>
+        </div>
+        <div class="mos-sec">🌱</div>
+        <div class="mos-badge"><div class="mos-badge-n">5+</div><div class="mos-badge-l">Years of<br/>Impact</div></div>
+      </div>
+      <div class="about-right">
+        <p class="sec-sub" style="max-width:100%;margin-bottom:26px">We work closely with schools, communities, and corporate partners to design scalable, measurable, and sustainable development programs. Quality education combined with strong values creates lasting social change.</p>
+        <div class="vm-grid">
+          <div class="vm"><div class="vm-ico">🔭</div><h4>Our Vision</h4><p>An inclusive society where every child has access to quality education, dignity, and opportunity.</p></div>
+          <div class="vm"><div class="vm-ico">🎯</div><h4>Our Mission</h4><p>Redefine education through innovative, value-based learning and responsible citizenship.</p></div>
+        </div>
+        <div class="about-quote">"Vidya Vinayena Shobhite" — Knowledge shines brightest when paired with humility and service to society.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  PROGRAMS
+═══════════════════════════════════════════ -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <div class="prog-head">
+      <div class="eyebrow">Our Work</div>
+      <h2 class="sec-title">Strategic Programs Creating <span>Real Impact</span></h2>
+      <p class="sec-sub">Education Transformation and Social Impact — with measurable outcomes at every stage.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="pcard">
+        <div class="pcard-img ci-or">🏫</div>
+        <div class="pcard-body">
+          <span class="ptag t-or">Education</span>
+          <h3>Government School Adoption</h3>
+          <p>Infrastructure, resources, and mentoring for government schools to reach their full potential.</p>
+          <a href="#contact" class="pcard-arrow" style="color:var(--or)">Learn more →</a>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img ci-te">🔤</div>
+        <div class="pcard-body">
+          <span class="ptag t-te">Foundational Learning</span>
+          <h3>Foundational Learning Enhancement</h3>
+          <p>Literacy and numeracy programs ensuring no child is left behind in early education years.</p>
+          <a href="#contact" class="pcard-arrow" style="color:var(--teal)">Learn more →</a>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img ci-bl">💻</div>
+        <div class="pcard-body">
+          <span class="ptag t-bl">Digital Access</span>
+          <h3>Smart Classrooms & Digital Access</h3>
+          <p>Smart classrooms with projectors, digital content, and internet access in government schools.</p>
+          <a href="#contact" class="pcard-arrow" style="color:var(--blue)">Learn more →</a>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img ci-pu">📖</div>
+        <div class="pcard-body">
+          <span class="ptag t-pu">Reading</span>
+          <h3>Library & Reading Initiatives</h3>
+          <p>Vibrant libraries and curated reading programs fostering a love for books in every school.</p>
+          <a href="#contact" class="pcard-arrow" style="color:var(--pur)">Learn more →</a>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img ci-gn">👩‍🏫</div>
+        <div class="pcard-body">
+          <span class="ptag t-gn">Capacity Building</span>
+          <h3>Teacher Capacity Building</h3>
+          <p>Training teachers with modern pedagogy, digital tools, and subject-matter expertise workshops.</p>
+          <a href="#contact" class="pcard-arrow" style="color:var(--grn)">Learn more →</a>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img ci-rd">🤝</div>
+        <div class="pcard-body">
+          <span class="ptag t-rd">Social Impact</span>
+          <h3>Women & Youth Empowerment</h3>
+          <p>Skills, awareness, and leadership programs empowering women and youth from underserved communities.</p>
+          <a href="#contact" class="pcard-arrow" style="color:var(--red)">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  GALLERY
+═══════════════════════════════════════════ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="gal-head">
+      <div class="eyebrow">Our Impact in Pictures</div>
+      <h2 class="sec-title">Moments That <span>Tell Our Story</span></h2>
+      <p class="sec-sub">Every image is a testimony to the change we're building — one school, one child, one community at a time.</p>
+    </div>
+
+    <!-- GALLERY GRID
+         To add REAL photos:
+         1. Save photos to same folder as this file
+         2. Replace the emoji + gradient divs with:
+            <img src="your-photo.jpg" alt="caption" style="width:100%;height:100%;object-fit:cover">
+    -->
+    <div class="gal-grid">
+      <div class="gi tall g1" onclick="openLightbox('Smart Classroom Setup','Govt. School, Malleshwaram')">
+        <div class="gi-bg">📚</div>
+        <div class="gi-ov"><span>View Photo</span></div>
+        <div class="gi-cap"><p>Smart Classroom Setup</p><span>Govt. School, Malleshwaram</span></div>
+      </div>
+      <div class="gi g2" onclick="openLightbox('Community Welfare Program','Health & Nutrition Camp')">
+        <div class="gi-bg">🌱</div>
+        <div class="gi-ov"><span>View Photo</span></div>
+        <div class="gi-cap"><p>Community Welfare</p><span>Health & Nutrition Camp</span></div>
+      </div>
+      <div class="gi g3" onclick="openLightbox('Digital Literacy Session','Student Training')">
+        <div class="gi-bg">💻</div>
+        <div class="gi-ov"><span>View Photo</span></div>
+        <div class="gi-cap"><p>Digital Literacy Session</p><span>Student Training</span></div>
+      </div>
+      <div class="gi g4" onclick="openLightbox('Teacher Training Workshop','Pedagogical Development')">
+        <div class="gi-bg">👩‍🏫</div>
+        <div class="gi-ov"><span>View Photo</span></div>
+        <div class="gi-cap"><p>Teacher Training</p><span>Pedagogical Development</span></div>
+      </div>
+      <div class="gi g5" onclick="openLightbox('CSR Partner Visit','Corporate Engagement')">
+        <div class="gi-bg">🤝</div>
+        <div class="gi-ov"><span>View Photo</span></div>
+        <div class="gi-cap"><p>CSR Partner Visit</p><span>Corporate Engagement</span></div>
+      </div>
+    </div>
+    <div class="gal-cta">
+      <!-- Change this href to your Instagram or Google Photos album link -->
+      <a href="#" class="btn-or-out" target="_blank">View Full Gallery on Instagram →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lbox-inner" onclick="event.stopPropagation()">
+    <button class="lbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lbox-img" id="lbox-img-content">📸</div>
+    <p class="lbox-cap" id="lbox-caption">Photo caption</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  CSR
+═══════════════════════════════════════════ -->
+<section class="csr" id="csr">
+  <div class="wrap">
+    <div class="eyebrow">For Corporates</div>
+    <h2 class="sec-title">Partner With <span>Athithya Foundation</span></h2>
+    <p class="sec-sub">Structured CSR engagement models for corporates seeking meaningful, measurable, and ESG-aligned impact.</p>
+    <div class="csr-grid">
+      <div>
+        <div class="csr-benefits">
+          <div class="csrb"><div class="csrb-ic">🌟</div><div><h4>High-Visibility Community Impact</h4><p>Your brand is visible at every program touchpoint — schools, events, and community centres across Karnataka.</p></div></div>
+          <div class="csrb"><div class="csrb-ic">♻️</div><div><h4>ESG & SDG Alignment</h4><p>Programs mapped to UN SDGs — Quality Education, Gender Equality, and Reduced Inequalities.</p></div></div>
+          <div class="csrb"><div class="csrb-ic">📊</div><div><h4>Transparent Reporting</h4><p>Detailed utilization reports, photo documentation, and impact dashboards shared quarterly.</p></div></div>
+          <div class="csrb"><div class="csrb-ic">👥</div><div><h4>Employee Volunteering</h4><p>Structured volunteering opportunities — teaching, mentoring, and career guidance for students.</p></div></div>
+          <div class="csrb"><div class="csrb-ic">📍</div><div><h4>Scalable Multi-Location Programs</h4><p>Programs can scale across multiple cities as your CSR mandate grows over the years.</p></div></div>
+        </div>
+      </div>
+      <div class="csr-form">
+        <h3>Start the Conversation</h3>
+        <p>Tell us about your CSR goals. We respond within 24 hours.</p>
+        <div class="fgrow">
+          <div class="fg"><label>First Name</label><input type="text" placeholder="Jyothi"/></div>
+          <div class="fg"><label>Last Name</label><input type="text" placeholder="Gudi"/></div>
+        </div>
+        <div class="fg"><label>Company Name</label><input type="text" placeholder="Athithya Foundation"/></div>
+        <div class="fg"><label>Work Email</label><input type="email" placeholder="jyothi@company.com"/></div>
+        <div class="fg"><label>CSR Budget Range</label>
+          <select><option>Select range...</option><option>₹5L – ₹25L</option><option>₹25L – ₹1Cr</option><option>₹1Cr – ₹5Cr</option><option>₹5Cr+</option></select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Tell us about your CSR priorities..."></textarea></div>
+        <button class="btn-csr-sub">Send Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-head">
+      <div class="eyebrow">Voices of Change</div>
+      <h2 class="sec-title">What People Say About Our <span>Work</span></h2>
+      <p class="sec-sub">From students in classrooms to CSR heads in boardrooms — real impact creates real stories.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="tc">
+        <div class="tc-qt">"</div>
+        <span class="tc-type">Student Beneficiary</span>
+        <p>The smart classroom set up by Athithya Foundation changed everything. For the first time, I could see the world through a screen in my own school. I now want to become an engineer.</p>
+        <div class="tc-auth">
+          <div class="tc-av">S</div>
+          <div><div class="tc-name">Sudhanv P Gudi.</div><div class="tc-role">Founder, LOD Malleshwaram</div></div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-qt">"</div>
+        <span class="tc-type">CSR Partner</span>
+        <p>Athithya Foundation delivered exactly what they promised — transparent reporting, visible impact, and genuine dedication. The best CSR partner we've worked with in Bangalore.</p>
+        <div class="tc-auth">
+          <div class="tc-av tl">V</div>
+          <div><div class="tc-name">Varshith Hegde</div><div class="tc-role">Founder, WorkINgenes Bangalore</div></div>
+        </div>
+      </div>
+      <div class="tc">
+        <div class="tc-qt">"</div>
+        <span class="tc-type">School Principal</span>
+        <p>Before Athithya adopted our school, we had broken benches and no library. Today we have a smart classroom and 500 books. The transformation in two years is truly unbelievable.</p>
+        <div class="tc-auth">
+          <div class="tc-av bl">P</div>
+          <div><div class="tc-name">Praveen P. Gudi</div><div class="tc-role">Health Dept., Karnataka</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  CONTACT
+═══════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2 class="sec-title">We'd Love to <span>Hear From You</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="sec-sub">Whether you're a donor, volunteer, school, or corporate partner — we're here to connect, collaborate, and create change together.</p>
+        <div class="cmeths">
+          <div class="cm">
+            <div class="cm-ic">📍</div>
+            <div class="cm-txt">
+              <label>Our Office</label>
+              <!-- CHANGE THIS: Replace with your exact address -->
+              <p>Rudra Chambers, No.4/1, Ground Floor,<br/>4th Main Road, Between 8th & 9th Cross,<br/>Malleshwaram, Bangalore – 560003</p>
+            </div>
+          </div>
+          <div class="cm">
+            <div class="cm-ic">📞</div>
+            <div class="cm-txt">
+              <label>Phone</label>
+              <!-- CHANGE THIS: Replace +91XXXXXXXXXX with your real number -->
+              <a href="tel:+919148894917">+91 91488 94917</a>
+            </div>
+          </div>
+          <div class="cm">
+            <div class="cm-ic">📧</div>
+            <div class="cm-txt">
+              <label>Email</label>
+              <!-- CHANGE THIS: Replace with your real email -->
+              <a href="mailto:info@athithyafoundation.org">info@athithyafoundation.org</a>
+            </div>
+          </div>
+          <div class="cm">
+            <div class="cm-ic">🌐</div>
+            <div class="cm-txt">
+              <label>Website</label>
+              <a href="#">www.athithyafoundation.org</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════
+             SOCIAL MEDIA LINKS IN CONTACT SECTION
+             Change each href="#" to your real URL
+             Example: href="https://instagram.com/athithyafoundation"
+        ══════════════════════════════════════ -->
+        <div class="contact-socials">
+          <h4>Connect With Us</h4>
+          <div class="soc-row">
+            <a href="#" class="soc-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#E8610A" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="#E8610A" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="#E8610A"/></svg>
+              Instagram
+            </a>
+            <a href="#" class="soc-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#1A5FAB" stroke-width="2"/><path d="M7 10v7M7 7v.5" stroke="#1A5FAB" stroke-width="2" stroke-linecap="round"/><path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="#1A5FAB" stroke-width="2" stroke-linecap="round"/></svg>
+              LinkedIn
+            </a>
+            <a href="#" class="soc-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#1877F2" stroke-width="2"/><path d="M13 21v-8h2.5l.5-3H13V8.5c0-.83.67-1.5 1.5-1.5H16V4h-2a4 4 0 0 0-4 4v2H8v3h2v8" stroke="#1877F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="soc-btn" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="5" stroke="#FF0000" stroke-width="2"/><path d="M10 8.5l5 3.5-5 3.5V8.5Z" fill="#FF0000"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cf-wrap">
+        <h3>Send a Message</h3>
+        <p>We typically respond within one business day.</p>
+        <div class="lf"><label>Full Name</label><input type="text" placeholder="Your full name"/></div>
+        <div class="lf"><label>Email Address</label><input type="email" placeholder="you@example.com"/></div>
+        <div class="lf"><label>I am a...</label>
+          <select>
+            <option>Select type...</option>
+            <option>Corporate / CSR Partner</option>
+            <option>Volunteer</option>
+            <option>Donor</option>
+            <option>School / Teacher</option>
+            <option>Media / Press</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="lf"><label>Message</label><textarea placeholder="Write your message here..."></textarea></div>
+        <button class="btn-cf">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="fb-logo">
+          <img src="Athithya_Foundation_Logo_withoutBG.png" alt="Athithya Foundation Logo" style="height: 60px; width: auto; object-fit: contain;">
+          <div><div class="fbl-name">Athithya Foundation</div><div class="fbl-tag">Vidya Vinayena Shobhite</div></div>
+        </div>
+        <p class="fb-desc">A purpose-driven nonprofit transforming education ecosystems and delivering social services that uplift communities across Karnataka since 2020.</p>
+        <p class="fb-sanskrit">✦ "Vidya Vinayena Shobhite"</p>
+
+        <!-- ══ FOOTER SOCIAL ICONS ══
+             Change href="#" to your actual social URLs:
+             Instagram: https://instagram.com/YOURHANDLE
+             LinkedIn:  https://linkedin.com/company/YOURPAGE
+             Facebook:  https://facebook.com/YOURPAGE
+             YouTube:   https://youtube.com/@YOURCHANNEL
+        -->
+        <div class="footer-socials">
+          <a href="#" class="f-soc" title="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="rgba(255,255,255,0.5)"/></svg>
+          </a>
+          <a href="#" class="f-soc" title="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M7 10v7M7 7v.5" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/><path d="M11 17v-4c0-1.5 1-2 2-2s2 .5 2 2v4M11 10v7" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#" class="f-soc" title="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M13 21v-8h2.5l.5-3H13V8.5c0-.83.67-1.5 1.5-1.5H16V4h-2a4 4 0 0 0-4 4v2H8v3h2v8" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="f-soc" title="YouTube" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="5" stroke="rgba(255,255,255,0.5)" stroke-width="2"/><path d="M10 8.5l5 3.5-5 3.5V8.5Z" fill="rgba(255,255,255,0.5)"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="fc">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#csr">CSR Partnerships</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="fc">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#programs">School Adoption</a></li>
+          <li><a href="#programs">Smart Classrooms</a></li>
+          <li><a href="#programs">Library Initiative</a></li>
+          <li><a href="#programs">Teacher Training</a></li>
+          <li><a href="#programs">Women Empowerment</a></li>
+          <li><a href="#programs">Health & Nutrition</a></li>
+        </ul>
+      </div>
+
+      <div class="fc">
+        <h4>Contact</h4>
+        <p class="fc-addr">
+          Rudra Chambers, No.4/1,<br/>
+          4th Main Road, Malleshwaram,<br/>
+          Bangalore – 560003<br/><br/>
+          📞 To be updated<br/>
+          📧 To be updated
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Athithya Foundation. All rights reserved. Registered Non-profit, Karnataka.</p>
+      <div class="footer-btm-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">80G Certificate</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+  JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+// ── Mobile menu toggle ──
+function toggleMenu(){
+  const m=document.getElementById('mobmenu');
+  m.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobmenu').classList.remove('open');
+}
+
+// ── Gallery lightbox ──
+function openLightbox(title, subtitle){
+  document.getElementById('lbox-caption').textContent = title + ' — ' + subtitle;
+  document.getElementById('lightbox').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+// ── Navbar: add shadow on scroll ──
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('topnav');
+  if(window.scrollY > 40){
+    nav.style.boxShadow = '0 4px 24px rgba(232,97,10,0.12)';
+  } else {
+    nav.style.boxShadow = '0 2px 18px rgba(232,97,10,0.07)';
+  }
+});
+
+// ── Form submission (shows alert — replace with real backend later) ──
+document.querySelectorAll('.btn-csr-sub, .btn-cf').forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert('Thank you! We will get back to you within 24 hours.\n\nTo make this form actually send emails, connect it to Formspree or EmailJS — both free and no-code.');
+  });
+});
+
+// ── Smooth scroll for all anchor links ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
